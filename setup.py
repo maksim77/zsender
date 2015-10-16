@@ -1,4 +1,4 @@
-from distutils.core import setup, Extension
+from distutils.core import setup
 
 setup(name='Zabbix Sender',
       version='0.1',
