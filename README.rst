@@ -1,5 +1,7 @@
 Zabbix Sender
 =============
+|PyPi Status| |PyPi Downloads|
+
 Quick Start
 -----------
 ::
