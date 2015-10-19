@@ -1,9 +1,12 @@
 from distutils.core import setup
 
+with open('README.rst', 'r') as f:
+    readme = f.read()
+
 setup(name='ZabbixSender',
-      version='0.1.5',
+      version='0.1.6.7',
       description='Simple zabbix sender',
-      long_description = open("README.rst", "r").read(),
+      long_description=readme,
       author='Maksim Syomochkin',
       author_email='maksim77ster@gmail.com',
       url='https://github.com/maksim77/zsender',
