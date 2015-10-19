@@ -1,9 +1,17 @@
 class ZabbixSender:
-    def __init__(self, server, port):
+    def __init__(self, server='127.0.0.1', port='10051', config=''):
         import socket
-        self.s = socket.socket()
-        self.server = server
+        if config is not '':
+            import re
+
+            conf_file = open(config, 'r')
+            re_server = re.compile('\\nServer=(\S*)\\n\\n')
+            temp_server = re_server.search(conf_file.read())
+            self.server = temp_server.groups()[0]
+        else:
+            self.server = server
         self.port = port
+        self.s = socket.socket()
 
     def __str__(self):
         import json
