@@ -8,6 +8,7 @@ setup(name='ZabbixSender',
       url='https://github.com/maksim77/zsender',
       py_modules=['ZabbixSender'],
 	  keywords='zabbix sender monitoring',
+	  license='Apache Software License',
 	  classifiers=[
 			  'Development Status :: 2 - Pre-Alpha',
 			  'License :: OSI Approved :: Apache Software License',
