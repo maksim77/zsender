@@ -20,9 +20,7 @@ class ZabbixSender:
                           indent=4)
 
     def send(self, data):
-        import json
-        data = json.dumps(data)
-        data = data.encode('utf-8')
+        data = str(data).encode('utf-8')
         self.s.connect((self.server, int(self.port)))
         self.s.send(data)
         result = self.s.recv(1024)
@@ -39,6 +37,7 @@ class ZabbixPacket:
         return json.dumps(self.packet, indent=2)
 
     def add(self, host, key, value):
+        # TODO: Add named attribute
         metric = {'host': host,
                   'key': key,
                   'value': value}

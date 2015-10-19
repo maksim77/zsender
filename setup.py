@@ -5,5 +5,6 @@ setup(name='Zabbix Sender',
       description='Simple zabbix sender',
       author='Maksim Syomochkin',
       author_email='maksim77ster@gmail.com',
+      url='https://github.com/maksim77/zsender',
       py_modules=['ZabbixSender']
       )
