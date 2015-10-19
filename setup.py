@@ -1,6 +1,6 @@
 from distutils.core import setup
 
-setup(name='Zabbix Sender',
+setup(name='ZabbixSender',
       version='0.1',
       description='Simple zabbix sender',
       author='Maksim Syomochkin',

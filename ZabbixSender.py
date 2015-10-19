@@ -1,6 +1,5 @@
 class ZabbixSender:
     def __init__(self, server='127.0.0.1', port='10051', config=''):
-        import socket
         if config is not '':
             import re
 
@@ -11,7 +10,6 @@ class ZabbixSender:
         else:
             self.server = server
         self.port = port
-        self.s = socket.socket()
 
     def __str__(self):
         import json
@@ -20,11 +18,21 @@ class ZabbixSender:
                           indent=4)
 
     def send(self, data):
+        import re
+        import socket
+        import time
+        import json
+
         data = str(data).encode('utf-8')
+        self.s = socket.socket()
         self.s.connect((self.server, int(self.port)))
         self.s.send(data)
-        result = self.s.recv(1024)
-        return result
+        time.sleep(0.5)
+        status = self.s.recv(1024).decode('utf-8')
+        re_status = re.compile('(\{.*\})')
+        status = re_status.search(status).groups()[0]
+        self.status = json.loads(status)
+        self.s.close()
 
 
 class ZabbixPacket:
