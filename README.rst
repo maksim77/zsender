@@ -4,14 +4,17 @@ Zabbix Sender
 Quick Start
 -----------
 
-.. code-block:: python
+.. code:: python
 
     from ZabbixSender import ZabbixSender, ZabbixPacket
     server = ZabbixSender('127.0.0.1', 10051)
-    packet = ZabbixPacket('myhost','key', 'value')
+    packet = ZabbixPacket()
+    packet.add('myhost','key', 'value')
+    packet.add('myhost2', 'other_key', 'value2')
     server.send(packet)
     print(server.status)
 
 ::
 
-    {'response': 'success', 'info': 'processed: 1; failed: 0; total: 1; seconds spent: 0.000297'}
+    {'info': 'processed: 2; failed: 0; total: 4; seconds spent: 0.207659',
+     'response': 'success'}
