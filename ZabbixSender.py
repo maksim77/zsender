@@ -44,9 +44,14 @@ class ZabbixPacket:
         import json
         return json.dumps(self.packet, indent=2)
 
-    def add(self, host, key, value):
+    def add(self, host, key, value, clock=None):
         # TODO: Add named attribute
+        # TODO: Add clock parameters
+        if clock is None:
+            from datetime import datetime
+            clock = int(datetime.now().timestamp())
         metric = {'host': host,
                   'key': key,
-                  'value': value}
+                  'value': value,
+                  'clock': clock}
         self.packet['data'].append(metric)

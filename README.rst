@@ -4,13 +4,25 @@ Zabbix Sender
 Quick Start
 -----------
 
+Connection settings
+
 .. code:: python
 
     from ZabbixSender import ZabbixSender, ZabbixPacket
     server = ZabbixSender('127.0.0.1', 10051)
-    packet = ZabbixPacket()
+
+Adds the values in the package. In the first example with the current
+time, the second specified in unixtime format.
+
+.. code:: python
+
     packet.add('myhost','key', 'value')
-    packet.add('myhost2', 'other_key', 'value2')
+    packet.add('myhost2', 'other_key', 'value2', 1455607162)
+
+Sending data
+
+.. code:: python
+
     server.send(packet)
     print(server.status)
 
