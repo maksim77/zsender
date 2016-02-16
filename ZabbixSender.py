@@ -10,6 +10,7 @@ class ZabbixSender:
         else:
             self.server = server
         self.port = port
+        self.status = ''
 
     def __str__(self):
         import json
@@ -17,22 +18,22 @@ class ZabbixSender:
                            'port': self.port},
                           indent=4)
 
-    def send(self, data):
+    def send(self, packet):
         import re
         import socket
         import time
         import json
 
-        data = str(data).encode('utf-8')
-        self.s = socket.socket()
-        self.s.connect((self.server, int(self.port)))
-        self.s.send(data)
+        packet = str(packet).encode('utf-8')
+        s = socket.socket()
+        s.connect((self.server, int(self.port)))
+        s.send(packet)
         time.sleep(0.5)
-        status = self.s.recv(1024).decode('utf-8')
+        status = s.recv(1024).decode('utf-8')
         re_status = re.compile('(\{.*\})')
         status = re_status.search(status).groups()[0]
         self.status = json.loads(status)
-        self.s.close()
+        s.close()
 
 
 class ZabbixPacket:
