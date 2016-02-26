@@ -1,8 +1,13 @@
-class ZabbixSender:
-    def __init__(self, server='127.0.0.1', port='10051', config=''):
-        if config is not '':
-            import re
+import json
+import re
+import socket
+import time
+from datetime import datetime
 
+
+class ZabbixSender:
+    def __init__(self, server='127.0.0.1', port='10051', config=None):
+        if config is not None:
             conf_file = open(config, 'r')
             re_server = re.compile('\\nServer=(\S*)\\n\\n')
             temp_server = re_server.search(conf_file.read())
@@ -13,17 +18,11 @@ class ZabbixSender:
         self.status = ''
 
     def __str__(self):
-        import json
         return json.dumps({'server': self.server,
                            'port': self.port},
                           indent=4)
 
     def send(self, packet):
-        import re
-        import socket
-        import time
-        import json
-
         packet = str(packet).encode('utf-8')
         s = socket.socket()
         s.connect((self.server, int(self.port)))
@@ -42,14 +41,11 @@ class ZabbixPacket:
                        'data': []}
 
     def __str__(self):
-        import json
         return json.dumps(self.packet, indent=2)
 
     def add(self, host, key, value, clock=None):
         # TODO: Add named attribute
-        # TODO: Add clock parameters
         if clock is None:
-            from datetime import datetime
             clock = int(datetime.now().timestamp())
         metric = {'host': host,
                   'key': key,
