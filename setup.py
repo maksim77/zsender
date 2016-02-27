@@ -4,7 +4,7 @@ with open('README.rst', 'r') as f:
     readme = f.read()
 
 setup(name='ZabbixSender',
-      version='0.1.9',
+      version='0.2',
       description='Simple zabbix sender',
       long_description=readme,
       author='Maksim Syomochkin',
