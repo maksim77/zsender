@@ -30,6 +30,10 @@ Now we send our package in Zabbix Server
 
 And see the delivery status
 
+.. code:: python
+
+    print(server.status)
+
 ::
 
     {'info': 'processed: 2; failed: 0; total: 4; seconds spent: 0.207659',
