@@ -1,0 +1,14 @@
+sudo: required
+services:
+  - docker
+language: python
+python:
+  - "3.5"
+install:
+  - pip install ZabbixSender docker-compose
+script:
+  - docker-compose up -d
+  - python3 git_tests.py
+notifications:
+  email:
+    - maksim77ster@gmail.com
