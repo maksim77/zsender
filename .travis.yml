@@ -11,7 +11,7 @@ before_install:
  - chmod +x docker-compose
  - sudo mv docker-compose /usr/local/bin
 install:
-  - pip install ZabbixSender docker-compose
+  - pip install ZabbixSender
 script:
   - docker-compose up -d
   - python3 git_tests.py
