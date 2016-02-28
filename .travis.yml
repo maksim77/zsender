@@ -12,8 +12,9 @@ before_install:
  - sudo mv docker-compose /usr/local/bin
 install:
   - pip install ZabbixSender
-  - docker-compose up -d
 script:
+  - docker-compose up -d
+  - sleep 10
   - python3 git_tests.py
 notifications:
   email:
