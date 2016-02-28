@@ -3,17 +3,19 @@ import unittest
 
 from datetime import datetime
 
+IP = '127.0.0.1'
+# IP = '192.168.99.100' # For local testing
 
 class TestServerConstructor(unittest.TestCase):
     def setUp(self):
-        self.server = ZabbixSender.ZabbixSender('127.0.0.1', 10051)
+        self.server = ZabbixSender.ZabbixSender(IP, 10051)
 
     def test_conf_file_parse(self):
         server = ZabbixSender.ZabbixSender(config='zabbix_agentd.conf')
         self.assertEqual(server.server, '192.168.1.2')
 
     def test_server_host(self):
-        self.assertEqual(self.server.server, '127.0.0.1')
+        self.assertEqual(self.server.server, IP)
 
     def test_server_port(self):
         self.assertEqual(self.server.port, 10051)

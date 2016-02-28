@@ -1,7 +1,7 @@
 Zabbix Sender
 =============
 
-|PyPI| |PyPI Count|
+|PyPI| |PyPI Count| |Build Status|
 
 Quick Start
 -----------
@@ -43,3 +43,5 @@ And see the delivery status
    :target: https://pypi.python.org/pypi/ZabbixSender
 .. |PyPI Count| image:: https://img.shields.io/pypi/dw/ZabbixSender.svg
    :target: https://pypi.python.org/pypi/ZabbixSender
+.. |Build Status| image:: https://travis-ci.org/maksim77/zsender.svg?branch=master
+   :target: https://travis-ci.org/maksim77/zsender

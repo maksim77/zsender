@@ -15,7 +15,7 @@ install:
 script:
   - docker-compose up -d
   - sleep 10
-  - python3 git_tests.py
+  - python3 tests.py
 notifications:
   email:
     - maksim77ster@gmail.com
