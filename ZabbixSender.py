@@ -11,6 +11,7 @@ class ZabbixSender:
             conf_file = open(config, 'r')
             re_server = re.compile('\\nServer=(\S*)\\n\\n')
             temp_server = re_server.search(conf_file.read())
+            conf_file.close()
             self.server = temp_server.groups()[0]
         else:
             self.server = server
