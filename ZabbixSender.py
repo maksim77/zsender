@@ -15,7 +15,7 @@ class ZabbixSender:
         else:
             self.server = server
         self.port = port
-		self.status = '1'
+        self.status = ''
 
     def __str__(self):
         return json.dumps({'server': self.server,
