@@ -12,10 +12,13 @@ before_install:
  - sudo mv docker-compose /usr/local/bin
  - docker-compose up -d
 install:
-  - pip install ZabbixSender
+  - pip install coveralls pep8
 script:
-  - bash port_checker.sh
-  - python3 tests.py
+  - while ! nc -z 127.0.0.1 10051; do sleep 1; done
+  - coverage run tests.py
+  - pep8 ZabbixSender.py
+after_success:
+  coveralls
 notifications:
   email:
     - maksim77ster@gmail.com

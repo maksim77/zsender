@@ -2,9 +2,11 @@ import ZabbixSender
 import unittest
 
 from datetime import datetime
+import json
 
 IP = '127.0.0.1'
-# IP = '192.168.99.100' # For local testing
+# IP = '192.168.99.100'  # For local testing
+
 
 class TestServerConstructor(unittest.TestCase):
     def setUp(self):
@@ -22,6 +24,10 @@ class TestServerConstructor(unittest.TestCase):
 
     def test_server_status(self):
         self.assertEqual(self.server.status, '')
+
+    def test_server_str(self):
+        server_dict = {'server': str(IP), "port": 10051}
+        self.assertEqual(json.loads(self.server.__str__()), server_dict)
 
     def test_full(self):
         cur_date_unix = datetime.now().timestamp()
