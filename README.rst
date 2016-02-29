@@ -1,7 +1,7 @@
 Zabbix Sender
 =============
 
-|PyPI| |PyPI Count| |Build Status|
+|PyPI| |PyPI Count| |Build Status| |Coverage Status|
 
 Quick Start
 -----------
@@ -45,3 +45,5 @@ And see the delivery status
    :target: https://pypi.python.org/pypi/ZabbixSender
 .. |Build Status| image:: https://travis-ci.org/maksim77/zsender.svg?branch=master
    :target: https://travis-ci.org/maksim77/zsender
+.. |Coverage Status| image:: https://coveralls.io/repos/github/maksim77/zsender/badge.svg?branch=master
+   :target: https://coveralls.io/github/maksim77/zsender?branch=master
