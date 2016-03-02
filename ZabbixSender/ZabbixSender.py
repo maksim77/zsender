@@ -2,7 +2,6 @@ import json
 import re
 import socket
 import time
-from datetime import datetime
 
 
 class ZabbixSender:
@@ -34,22 +33,3 @@ class ZabbixSender:
         status = re_status.search(status).groups()[0]
         self.status = json.loads(status)
         s.close()
-
-
-class ZabbixPacket:
-    def __init__(self):
-        self.packet = {'request': 'sender data',
-                       'data': []}
-
-    def __str__(self):
-        return json.dumps(self.packet, indent=2)
-
-    def add(self, host, key, value, clock=None):
-        # TODO: Add named attribute
-        if clock is None:
-            clock = int(datetime.now().timestamp())
-        metric = {'host': host,
-                  'key': key,
-                  'value': value,
-                  'clock': clock}
-        self.packet['data'].append(metric)

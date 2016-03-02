@@ -1,14 +1,14 @@
 from distutils.core import setup
 
 setup(name='ZabbixSender',
-      version='0.2',
+      version='0.2.5',
       description='Simple zabbix sender',
       long_description=open('README.rst', 'r').read() + '\n\n' + open(
           'CHANGELOG.rst', 'r').read(),
       author='Maksim Syomochkin',
       author_email='maksim77ster@gmail.com',
       url='https://github.com/maksim77/zsender',
-      py_modules=['ZabbixSender'],
+      packages=['ZabbixSender'],
       keywords='zabbix sender monitoring',
       license='Apache Software License',
       classifiers=[
