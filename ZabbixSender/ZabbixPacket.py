@@ -8,7 +8,7 @@ class ZabbixPacket:
                        'data': []}
 
     def __str__(self):
-        return json.dumps(self.packet, indent=2)
+        return json.dumps(self.packet)
 
     def add(self, host, key, value, clock=datetime.now().timestamp()):
         if (isinstance(clock, int)) or (isinstance(clock, float)):

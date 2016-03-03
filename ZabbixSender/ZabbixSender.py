@@ -25,7 +25,10 @@ class ZabbixSender:
     def send(self, packet):
         packet = str(packet).encode('utf-8')
         s = socket.socket()
-        s.connect((self.server, int(self.port)))
+        try:
+            s.connect((self.server, int(self.port)))
+        except Exception as e: # TODO: Horrible! Rewrite immediately.
+            print(e)
         s.send(packet)
         time.sleep(0.5)
         status = s.recv(1024).decode('utf-8')

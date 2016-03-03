@@ -15,4 +15,5 @@ class FullTest(unittest.TestCase):
         packet.add('host2', 'key3', 'IDDQD')
         packet.add('host1', 'key1', 33.1, cur_date_unix)
         self.server.send(packet)
+        print(self.server.status)
         self.assertEqual(self.server.status['response'], 'success')
