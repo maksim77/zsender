@@ -27,7 +27,7 @@ class ZabbixSender:
         s = socket.socket()
         try:
             s.connect((self.server, int(self.port)))
-        except Exception as e: # TODO: Horrible! Rewrite immediately.
+        except Exception as e:  # TODO: Horrible! Rewrite immediately.
             print(e)
         s.send(packet)
         time.sleep(0.5)
