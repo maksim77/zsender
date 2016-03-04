@@ -3,8 +3,8 @@ from ZabbixSender import ZabbixSender, ZabbixPacket
 
 from datetime import datetime
 
-# IP = '127.0.0.1'
-IP = '192.168.99.100'  # For local testing
+IP = '127.0.0.1'
+# IP = '192.168.99.100'  # For local testing
 
 
 class FullTest(unittest.TestCase):
