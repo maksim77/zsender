@@ -1,12 +1,12 @@
 try:
     from setuptools import setup
-except ImportError:  # pragma: no cover
+except ImportError:
     from ez_setup import use_setuptools
 
     use_setuptools()
     from setuptools import setup
 
-setup(name='ZabbixSender',  # pragma: no cover
+setup(name='ZabbixSender',
       version='0.2.5',
       description='Simple zabbix sender',
       long_description=open('README.rst', 'r').read() + '\n\n' + open(
