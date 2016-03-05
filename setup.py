@@ -6,7 +6,7 @@ except ImportError:  # pragma: no cover
     use_setuptools()
     from setuptools import setup
 
-setup(name='ZabbixSender',
+setup(name='ZabbixSender',  # pragma: no cover
       version='0.2.5',
       description='Simple zabbix sender',
       long_description=open('README.rst', 'r').read() + '\n\n' + open(
