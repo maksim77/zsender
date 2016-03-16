@@ -6,6 +6,7 @@ except ImportError:
     use_setuptools()
     from setuptools import setup
 
+
 setup(name='ZabbixSender',
       version='0.2.5',
       description='Simple zabbix sender',
