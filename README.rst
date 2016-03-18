@@ -1,6 +1,10 @@
 Zabbix Sender
 =============
 
+.. image:: https://badges.gitter.im/maksim77/zsender.svg
+   :alt: Join the chat at https://gitter.im/maksim77/zsender
+   :target: https://gitter.im/maksim77/zsender?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+
 |PyPI| |PyPI Count| |Build Status| |Coverage Status|
 
 Quick Start
