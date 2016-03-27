@@ -1,7 +1,15 @@
 Zabbix Sender
 =============
 
-|PyPI| |PyPI Count| |Build Status| |Coverage Status| |Gitter|
+|PyPI| |PyPI Count| |Build Status| |Coverage Status|
+
+Disclaimer
+==========
+
+Development of this module stopped! All ideas and solutions will be
+transferred into `py-zabbix <https://github.com/blacked/py-zabbix>`__.
+py-zabbix is much more powerful project, and I don't want to reinvent
+the wheel.
 
 Quick Start
 -----------
@@ -38,10 +46,7 @@ And see the delivery status
 
     {'info': 'processed: 2; failed: 0; total: 4; seconds spent: 0.207659',
      'response': 'success'}
-     
-.. |Gitter| image:: https://badges.gitter.im/maksim77/zsender.svg
-   :alt: Join the chat at https://gitter.im/maksim77/zsender
-   :target: https://gitter.im/maksim77/zsender?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+
 .. |PyPI| image:: https://img.shields.io/pypi/v/ZabbixSender.svg
    :target: https://pypi.python.org/pypi/ZabbixSender
 .. |PyPI Count| image:: https://img.shields.io/pypi/dw/ZabbixSender.svg
