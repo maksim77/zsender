@@ -8,7 +8,7 @@ except ImportError:
 
 
 setup(name='ZabbixSender',
-      version='0.2.5',
+      version='0.2.5.1',
       description='Simple zabbix sender',
       long_description=open('README.rst', 'r').read() + '\n\n' + open(
           'CHANGELOG.rst', 'r').read(),

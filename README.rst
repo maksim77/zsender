@@ -3,6 +3,10 @@ Zabbix Sender
 
 |PyPI| |PyPI Count| |Build Status| |Coverage Status|
 
+Disclaimer
+----------
+Development of this module stopped! All ideas and solutions will be transferred into py-zabbix. py-zabbix is much more powerful project, and I don't want to reinvent the wheel.
+
 Quick Start
 -----------
 
